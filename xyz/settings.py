@@ -43,7 +43,7 @@ ROOT_URLCONF = 'xyz.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['persons/templates'],
+        'DIRS': ['xyz/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

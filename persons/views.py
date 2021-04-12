@@ -4,7 +4,10 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .forms import PersonCreationForm
 from .models import Person, Country, State, District, City
 
+def home(request):
+    return render(request, 'persons/home.html')
 
+    
 def person_create_view(request):
     form = PersonCreationForm()
     if request.method == 'POST':
@@ -12,7 +15,7 @@ def person_create_view(request):
         if form.is_valid():
             form.save()
             return redirect('person_add')
-    return render(request, 'persons/home.html', {'form': form})
+    return render(request, 'persons/add_person.html', {'form': form})
 
 
 def person_update_view(request, pk):
